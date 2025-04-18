@@ -27,9 +27,10 @@ class Field {
         $value = htmlspecialchars($this->model->{$this->attribute} ?? '');
         $errorMessage = $this->model->hasError($this->attribute) ? $this->model->getErrorMessage($this->attribute) : '';
 
+
         return "
             <div class='field'>
-                <label class='label'>{$this->attribute}</label>
+                <label class='label'>{$this->model->getlabel($this->attribute)}</label>
                 <div class='control'>
                     <input class='input{$errorClass}' value='{$value}' type='{$this->type}' name='{$this->attribute}'>
                 </div>

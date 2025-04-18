@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Core\Application;
 use App\Core\Controller;
 use App\Core\Request;
 use App\Models\LoginModel;
-use App\Models\RegisterModel;
+use App\Models\User;
 
 class AuthController extends Controller {
     public function __construct() {
@@ -13,18 +14,19 @@ class AuthController extends Controller {
     }
 
     public function register(Request $request){
-        $registerModel = new RegisterModel();
+        $user = new User();
         if($request->isPost()){
-            $registerModel->loadData($request->getBody());
+            $user->loadData($request->getBody());
             
-            if($registerModel->validate() && $registerModel->register()){
-                return 'success !';
+            if($user->validate() && $user->put()){
+                Application::$app->session->setFlash("success", "You have loggend in successfully !");
+                Application::$app->response->redirect('/');
             }   
 
-            return $this->render('register', ['model' => $registerModel]);
+            return $this->render('register', ['model' => $user]);
         }
 
-        return $this->render('register', ['model' => $registerModel]);
+        return $this->render('register', ['model' => $user]);
     }
 
     public function login(Request $request){

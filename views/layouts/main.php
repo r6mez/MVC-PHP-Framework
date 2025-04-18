@@ -48,8 +48,14 @@
             </div>
         </div>
     </nav>
+
     <section class="section">
-            {{content}}
+        <?php if (\App\Core\Application::$app->session->getFlash("success")) : ?>
+            <div class="notification is-success">
+                <?= \App\Core\Application::$app->session->getFlash("success") ?>
+            </div>
+        <?php endif; ?>
+        {{content}}
     </section>
 </body>
 
