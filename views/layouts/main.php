@@ -36,16 +36,28 @@
 
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary" href="/register">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light" href="/login">
-                            Log in
-                        </a>
-                    </div>
+                    <?php if (App\Core\Application::isGuest()): ?>
+                        <div class="buttons">
+                            <a class="button is-primary" href="/register">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light" href="/login">
+                                Login
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <div class="buttons">
+                            <a class="button is-light" href="/logout">
+                                Logout
+                            </a>
+                            <a class="button is-light" href="/profile">
+                                <?php echo App\Core\Application::$app->user->getDisplayName() ?>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
+
         </div>
     </nav>
 

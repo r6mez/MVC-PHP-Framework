@@ -3,8 +3,13 @@
 namespace App\Core;
 
 abstract class DatabaseModel extends Model {
-    abstract public function tableName(): string;
+    abstract public static function tableName(): string;
     abstract public function attributes(): array;
+    abstract public static function id(): string;
+
+    public static function prepare($sql) {
+        return Application::$app->database->pdo->prepare($sql);
+    }
 
     public function put(){
         $tableName = $this->tableName();
@@ -18,7 +23,15 @@ abstract class DatabaseModel extends Model {
         return true;
     }
     
-    public function prepare($sql) {
-        return Application::$app->database->pdo->prepare($sql);
+    public static function getOne(array $where){ // ["email" => "asd", "name" => "zzz"]
+        $tableName = static::tableName();
+        $attributes = array_keys($where);
+        $whereSQL = implode("AND ", array_map(fn($attribute) => "$attribute = :$attribute", $attributes));
+        $statement = self::prepare("SELECT * FROM $tableName WHERE $whereSQL");
+        foreach($where as $key => $item){
+            $statement->bindValue(":$key", $item);
+        }
+        $statement->execute();
+        return $statement->fetchObject(static::class);
     }
 }

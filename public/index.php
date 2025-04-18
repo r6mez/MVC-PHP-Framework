@@ -2,6 +2,8 @@
 
 
 use App\Core\Application;
+use App\Controllers\AuthController;
+use App\Controllers\ExampleController;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -12,6 +14,7 @@ $dotenv->load();
 
 
 $config = [
+    'userClass' => \App\Models\RegisterModel::class,
     'db' => [
         'dsn' => $_ENV['DB_DSN'],
         'user' => $_ENV['DB_USER'],
@@ -24,13 +27,15 @@ $app = new Application($rootPath, $config);
 
 $app->router->get('/', 'home');
 
-$app->router->get('/contact', [App\Controllers\ExampleController::class, 'view']);
-$app->router->post('/contact', [App\Controllers\ExampleController::class, 'handleData']); 
+$app->router->get('/contact', [ExampleController::class, 'view']);
+$app->router->post('/contact', [ExampleController::class, 'handleData']); 
 
-$app->router->get('/login', [App\Controllers\AuthController::class, 'login']);
-$app->router->post('/login', [App\Controllers\AuthController::class, 'login']); 
+$app->router->get('/login', [AuthController::class, 'login']);
+$app->router->post('/login', [AuthController::class, 'login']); 
 
-$app->router->get('/register', [App\Controllers\AuthController::class, 'register']);
-$app->router->post('/register', [App\Controllers\AuthController::class, 'register']); 
+$app->router->get('/register', [AuthController::class, 'register']);
+$app->router->post('/register', [AuthController::class, 'register']); 
+
+$app->router->get('/logout', [AuthController::class, 'logout']); 
 
 $app->run();

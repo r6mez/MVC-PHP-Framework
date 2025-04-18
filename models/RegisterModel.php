@@ -3,21 +3,24 @@ namespace App\Models;
 
 use App\Core\DatabaseModel;
 
-class User extends DatabaseModel {
+class RegisterModel extends UserModel {
     public string $name = "";
     public string $email = "";
     public string $password = "";
     public string $confirmPassword = "";
 
-    public function tableName(): string {
+    public static function tableName(): string {
         return 'users';
     }
     
-
+    public static function id() : string {
+        return "id";
+    }
+    
     public function attributes(): array {
         return ['name', 'email', 'password'];
     }
-
+    
     public function labels(): array {
         return [
             'name' => "Full Name",
@@ -26,12 +29,7 @@ class User extends DatabaseModel {
             "confirmPassword" => "Confirm Password",
         ];
     }
-
-    public function put(){
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        return parent::put();
-    }
-
+    
     public function rules(): array {
         return [
             'name' => [self::RULE_REQUIRED],
@@ -50,5 +48,18 @@ class User extends DatabaseModel {
                 [self::RULE_MATCH, 'match' => 'password']
             ],
         ];
+    }
+
+    public function put(){
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        return parent::put();
+    }
+
+    public static function findOne(array $where) {
+        return self::getOne($where);
+    }
+
+    public function getDisplayName(): string {
+        return $this->name;
     }
 }
