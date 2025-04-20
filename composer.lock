@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cef3c451e07d550d4f0c55f2f8f1810a",
+    "content-hash": "4cc45ca2c4a0f366bb1522a6b3a8cf88",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -142,6 +142,40 @@
                 }
             ],
             "time": "2024-07-20T21:41:07+00:00"
+        },
+        {
+            "name": "ramez/php-mvc-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/r6mez/MVC-PHP-Core.git",
+                "reference": "4688b5839117adb00f189a7095b89710f00272a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/r6mez/MVC-PHP-Core/zipball/4688b5839117adb00f189a7095b89710f00272a6",
+                "reference": "4688b5839117adb00f189a7095b89710f00272a6",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ramez\\PhpMvcCore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Ramez Medhat",
+                    "email": "iramezdev@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/r6mez/MVC-PHP-Core/issues",
+                "source": "https://github.com/r6mez/MVC-PHP-Core/tree/v1.0.0"
+            },
+            "time": "2025-04-20T12:27:18+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -470,7 +504,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "ramez/php-mvc-core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
