@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar px-4 py-3" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
                 <h1 class="title is-4">Ramez MVC Framework</h1>
@@ -38,20 +38,20 @@
                 <div class="navbar-item">
                     <?php if (App\Core\Application::isGuest()): ?>
                         <div class="buttons">
-                            <a class="button is-primary" href="/register">
+                            <a class="button is-dark is-primary" href="/register">
                                 <strong>Sign up</strong>
                             </a>
-                            <a class="button is-light" href="/login">
+                            <a class="button is-dark" href="/login">
                                 Login
                             </a>
                         </div>
                     <?php else : ?>
                         <div class="buttons">
-                            <a class="button is-light" href="/logout">
-                                Logout
-                            </a>
-                            <a class="button is-light" href="/profile">
+                            <a class="button is-info is-dark" href="/profile">
                                 <?php echo App\Core\Application::$app->user->getDisplayName() ?>
+                            </a>
+                            <a class="button is-danger is-dark" href="/logout">
+                                Logout
                             </a>
                         </div>
                     <?php endif; ?>
