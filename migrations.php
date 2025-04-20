@@ -1,6 +1,6 @@
 <?php
 
-use App\Core\Application;
+use Ramez\PhpMvcCore\Application;
 
 require_once __DIR__.'/vendor/autoload.php';
 

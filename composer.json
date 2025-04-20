@@ -2,7 +2,8 @@
     "name": "irame/mvcphpframework",
     "autoload": {
         "psr-4": {
-            "App\\": "./"
+            "App\\": "./",
+            "Ramez\\PhpMvcCore\\": "vendor/ramez/php-mvc-core/"
         }
     },
     "authors": [

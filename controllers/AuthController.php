@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Core\Application;
-use App\Core\Controller;
-use App\Core\Middlewares\AuthMiddleware;
-use App\Core\Request;
-use App\Core\Response;
+use Ramez\PhpMvcCore\Application;
+use Ramez\PhpMvcCore\Controller;
+use Ramez\PhpMvcCore\Middlewares\AuthMiddleware;
+use Ramez\PhpMvcCore\Request;
+use Ramez\PhpMvcCore\Response;
 use App\Models\LoginModel;
 use App\Models\RegisterModel;
 

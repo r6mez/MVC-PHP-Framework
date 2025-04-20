@@ -2,7 +2,7 @@
 
 class m0001_initial {
     public function up(){
-        $db = \App\Core\Application::$app->database;
+        $db = \Ramez\PhpMvcCore\Application::$app->database;
         $SQL = "CREATE TABLE users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 email VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ class m0001_initial {
     }
 
     public function down(){
-        $db = \App\Core\Application::$app->database;
+        $db = \Ramez\PhpMvcCore\Application::$app->database;
         $SQL = "DROP TABLE users;";
         $db->pdo->exec($SQL);
     }

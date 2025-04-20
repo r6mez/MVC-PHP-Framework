@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $title ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        .navbar {
+            min-height: 90px;
+        }
+        .navbar-item img {
+            max-height: 70px;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar px-4 py-3" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <h1 class="title is-4">Ramez MVC Framework</h1>
+                <img src="assets/logo.png">
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -36,7 +44,7 @@
 
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <?php if (App\Core\Application::isGuest()): ?>
+                    <?php if (\Ramez\PhpMvcCore\Application::isGuest()): ?>
                         <div class="buttons">
                             <a class="button is-dark is-primary" href="/register">
                                 <strong>Sign up</strong>
@@ -48,7 +56,7 @@
                     <?php else : ?>
                         <div class="buttons">
                             <a class="button is-info is-dark" href="/profile">
-                                <?php echo App\Core\Application::$app->user->getDisplayName() ?>
+                                <?php echo \Ramez\PhpMvcCore\Application::$app->user->getDisplayName() ?>
                             </a>
                             <a class="button is-danger is-dark" href="/logout">
                                 Logout
@@ -62,9 +70,9 @@
     </nav>
 
     <section class="section">
-        <?php if (\App\Core\Application::$app->session->getFlash("success")) : ?>
+        <?php if (\Ramez\PhpMvcCore\Application::$app->session->getFlash("success")) : ?>
             <div class="notification is-success">
-                <?= \App\Core\Application::$app->session->getFlash("success") ?>
+                <?= \Ramez\PhpMvcCore\Application::$app->session->getFlash("success") ?>
             </div>
         <?php endif; ?>
         {{content}}

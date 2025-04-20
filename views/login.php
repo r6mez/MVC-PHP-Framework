@@ -7,7 +7,7 @@
         <h1 class="title is-2 has-text-centered">Login</h1>
         <div class="columns is-centered is-vcentered">
             <div class="column is-half">
-                <?php $form = \App\Core\Form\Form::begin('/login', 'post') ?>
+                <?php $form = \Ramez\PhpMvcCore\Form\Form::begin('/login', 'post') ?>
                     <!-- Form Fields -->
                     <?php echo $form->field($model, 'email')->emailField() ?>
                     <?php echo $form->field($model, 'password')->passwordField() ?>
@@ -23,7 +23,7 @@
                     <div class="has-text-centered">
                         Don't have an account? <a href="/register">Register</a>
                     </div>
-                <?php \App\Core\Form\Form::end() ?>
+                <?php \Ramez\PhpMvcCore\Form\Form::end() ?>
             </div>
         </div>
     </div>

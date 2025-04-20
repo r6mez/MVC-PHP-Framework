@@ -1,9 +1,7 @@
 <?php
 
-
-use App\Core\Application;
+use Ramez\PhpMvcCore\Application;
 use App\Controllers\AuthController;
-use App\Controllers\ExampleController;
 
 require_once __DIR__.'/../vendor/autoload.php';
 

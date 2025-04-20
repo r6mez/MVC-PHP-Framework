@@ -1,8 +1,8 @@
 <?php
 namespace App\Models;
 
-use App\Core\Model;
-use App\Core\Application;
+use Ramez\PhpMvcCore\Model;
+use Ramez\PhpMvcCore\Application;
 
 class LoginModel extends Model {
     public string $email = "";

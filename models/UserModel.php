@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-use App\Core\DatabaseModel;
+use Ramez\PhpMvcCore\DatabaseModel;
 
 
 abstract class UserModel extends DatabaseModel{

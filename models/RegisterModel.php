@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-use App\Core\DatabaseModel;
+use Ramez\PhpMvcCore\DatabaseModel;
 
 class RegisterModel extends UserModel {
     public string $name = "";

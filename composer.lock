@@ -148,12 +148,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/r6mez/MVC-PHP-Core.git",
+                "url": "https://github.com/r6mez/PhpMvcCore.git",
                 "reference": "4688b5839117adb00f189a7095b89710f00272a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/r6mez/MVC-PHP-Core/zipball/4688b5839117adb00f189a7095b89710f00272a6",
+                "url": "https://api.github.com/repos/r6mez/PhpMvcCore/zipball/4688b5839117adb00f189a7095b89710f00272a6",
                 "reference": "4688b5839117adb00f189a7095b89710f00272a6",
                 "shasum": ""
             },
@@ -172,8 +172,8 @@
                 }
             ],
             "support": {
-                "issues": "https://github.com/r6mez/MVC-PHP-Core/issues",
-                "source": "https://github.com/r6mez/MVC-PHP-Core/tree/v1.0.0"
+                "issues": "https://github.com/r6mez/PhpMvcCore/issues",
+                "source": "https://github.com/r6mez/PhpMvcCore/tree/v1.0.0"
             },
             "time": "2025-04-20T12:27:18+00:00"
         },
