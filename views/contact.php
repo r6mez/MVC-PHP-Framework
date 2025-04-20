@@ -1,3 +1,7 @@
+<?php 
+    $this->title = "Contact";
+?>
+
 <h1 class="title is-1 has-text-centered">Contact Us</h1>
 
 <div class="columns is-centered">

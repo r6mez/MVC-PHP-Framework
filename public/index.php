@@ -27,9 +27,6 @@ $app = new Application($rootPath, $config);
 
 $app->router->get('/', 'home');
 
-$app->router->get('/contact', [ExampleController::class, 'view']);
-$app->router->post('/contact', [ExampleController::class, 'handleData']); 
-
 $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']); 
 

@@ -1,3 +1,7 @@
+<?php 
+    $this->title = "Error";
+?>
+
 <div>
     <h1 class="title is-1">Error <?php echo $exception->getCode() ?></h1>
     <p><?php echo $exception->getMessage() ?></p>

@@ -16,6 +16,7 @@ class Application {
     public Session $session;
     public Controller $controller;
     public ?UserModel $user = null; // Initialize to null
+    public View $view;
 
     public function __construct($rootPath, array $config) {
         self::$ROOT_DIR = $rootPath;
@@ -27,6 +28,7 @@ class Application {
         $this->session = new Session();
         $this->database = new Database($config['db']);
         $this->router = new Router($this->request, $this->response);
+        $this->view = new View();
         
         $idValue = $this->session->get("user");
         
@@ -42,7 +44,7 @@ class Application {
         try{
             echo $this->router->resolve();
         } catch (\Exception $e) {
-            echo $this->router->renderView('error', ['exception' => $e]);
+            echo $this->view->renderView('error', ['exception' => $e]);
         }
     }
 
