@@ -3,7 +3,7 @@
 
 This is a lightweight and extensible MVC (Model-View-Controller) framework built with PHP. It provides a structured way to build web applications by separating concerns into models, views, and controllers.
 
-> **Note:** The core framework code resides in `vendor/ramez/php-mvc-core`. Your application code (controllers, models, views) lives in the project root folders.
+> **Note:** The core framework code resides in [MVC-PHP-Core](https://github.com/r6mez/MVC-PHP-Core). 
 
 ## ✨ Features
 
